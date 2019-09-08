@@ -1,0 +1,8 @@
+# Checar se o modulo esta ativado
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{SCRIPT_FILENAME} !-f
+    RewriteCond %{SCRIPT_FILENAME} !-d
+    RewriteRule ^(.*)$ ./index.php?route=$1 [QSA,L]
+</IfModule>
